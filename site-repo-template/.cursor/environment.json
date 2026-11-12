@@ -1,0 +1,10 @@
+{
+  "install": "if [ -f package-lock.json ]; then npm ci; elif [ -f package.json ]; then npm install; fi",
+  "start": "git config --global pull.rebase true",
+  "terminals": [
+    {
+      "name": "dev-preview",
+      "command": "if [ -f package.json ]; then npm run dev -- --host 0.0.0.0 || npm run dev; else npx --yes serve -l 3000 .; fi"
+    }
+  ]
+}
